@@ -11,22 +11,63 @@
     --neon-blue: #00d4ff;
     --dark-bg: #0a0a0f;
     --dark-card: #12121a;
+    --dark-hover: #1a1a25;
+    --text-primary: #ffffff;
+    --text-secondary: #9ca3af;
+    --border-color: rgba(138, 43, 226, 0.3);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
     background-color: var(--dark-bg);
-    color: white;
-    font-family: 'Vazirmatn', 'Inter', sans-serif;
+    color: var(--text-primary);
+    font-family: 'Vazirmatn', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    direction: rtl;
+    min-height: 100vh;
+  }
+
+  /* برای حالت انگلیسی */
+  [lang="en"] body {
+    direction: ltr;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
   }
 }
 
 @layer components {
+  /* استایل‌های گلاس */
   .glass {
     background: rgba(18, 18, 26, 0.7);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(138, 43, 226, 0.3);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
   }
 
+  .glass-card {
+    background: var(--dark-card);
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+  }
+
+  .glass-card:hover {
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+    transform: translateY(-2px);
+  }
+
+  /* گرادینت متن */
   .gradient-text {
     background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
     -webkit-background-clip: text;
@@ -34,13 +75,139 @@
     background-clip: text;
   }
 
+  /* افکت‌های گلو */
   .glow-purple {
     box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
   }
+
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  }
+
+  .glow-purple-text {
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+  }
+
+  .glow-blue-text {
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  }
+
+  /* دکمه‌ها */
+  .btn-primary {
+    background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--neon-purple);
+    background: rgba(138, 43, 226, 0.1);
+  }
+
+  /* نوار ناوبری */
+  .navbar-link {
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .navbar-link:hover {
+    color: var(--text-primary);
+    background: var(--dark-hover);
+  }
+
+  .navbar-link.active {
+    background: var(--neon-purple);
+    color: white;
+  }
+
+  /* کارت‌ها */
+  .stat-card {
+    background: var(--dark-card);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+  }
+
+  /* تی‌ای‌بل */
+  .table-custom {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .table-custom th {
+    background: var(--dark-hover);
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding: 1rem;
+    text-align: right;
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .table-custom td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .table-custom tr:hover {
+    background: var(--dark-hover);
+  }
+
+  /* پس‌زمینه گرید */
+  .grid-bg {
+    background-image: 
+      linear-gradient(rgba(138, 43, 226, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(138, 43, 226, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* انیمیشن‌ها */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
 }
 
+/* اسکرول بار */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -49,5 +216,60 @@
 
 ::-webkit-scrollbar-thumb {
   background: var(--neon-purple);
-  border-radius: 5px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-blue);
+}
+
+/* استایل‌های ریسپانسیو */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* حالت RTL/LTR */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="ltr"] {
+  text-align: left;
+}
+
+[dir="ltr"] .navbar-link {
+  font-family: 'Inter', sans-serif;
+}
+
+[dir="rtl"] .navbar-link {
+  font-family: 'Vazirmatn', sans-serif;
 }
