@@ -1,10 +1,7 @@
-import { RouterProvider } from "react-router";
+import { RouterProvider } from "react-router-dom";
 import { router } from "./routes";
 import { LanguageProvider } from "./context/LanguageContext";
-import "../styles/index.css";
-import { HashRouter, Routes, Route } from 'react-router-dom'
-// به جای RouterProvider یا BrowserRouter
-
+import "../styles/index.css";  // تغییر مسیر
 
 export default function App() {
   return (
