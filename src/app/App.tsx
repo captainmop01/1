@@ -1,20 +1,12 @@
-import { HashRouter, Routes, Route } from 'react-router-dom'
-import { LanguageProvider } from './context/LanguageContext'
-import '../styles/index.css'
-
-// صفحه ساده برای تست
-function Home() {
-  return <div style={{ padding: '20px', color: 'white' }}>XOLabs is Working! 🚀</div>
-}
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes";
+import { LanguageProvider } from "./context/LanguageContext";
+import "../styles/index.css";  // تغییر مسیر
 
 export default function App() {
   return (
     <LanguageProvider>
-      <HashRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </HashRouter>
+      <RouterProvider router={router} />
     </LanguageProvider>
-  )
+  );
 }
