@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XOLabs</title>
     <!-- CSP درست -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; script-src * 'unsafe-inline' 'unsafe-eval' data: blob:; style-src * 'unsafe-inline' data: blob:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; script-src * 'unsafe-inline' 'unsafe-eval' data: blob: 'wasm-unsafe-eval'; style-src * 'unsafe-inline' data: blob:;">
     <!-- آیکون -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
-    <!-- بیس آدرس برای گیت‌هاب -->
-    <base href="/1/">
 </head>
 <body>
     <div id="root"></div>
-    <!-- آدرس درست با احتساب base -->
     <script type="module" src="./src/main.tsx"></script>
 </body>
 </html>
