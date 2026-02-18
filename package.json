@@ -1,11 +1,17 @@
 {
-  "name": "@figma/my-make-file",
+  "name": "xolabs",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
+  "homepage": "https://[username].github.io/[repository-name]",
   "scripts": {
+    "dev": "vite",
     "build": "vite build",
-    "dev": "vite"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist",
+    "clean": "rm -rf dist .next out node_modules/.cache",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
@@ -48,14 +54,17 @@
     "lucide-react": "0.487.0",
     "motion": "12.23.24",
     "next-themes": "0.4.6",
+    "react": "18.3.1",
     "react-day-picker": "8.10.1",
     "react-dnd": "16.0.1",
     "react-dnd-html5-backend": "16.0.1",
+    "react-dom": "18.3.1",
     "react-hook-form": "7.55.0",
     "react-popper": "2.3.0",
     "react-resizable-panels": "2.1.7",
     "react-responsive-masonry": "2.7.1",
-    "react-router": "^7.13.0",
+    "react-router": "7.5.3",
+    "react-router-dom": "7.5.3",
     "react-slick": "0.31.0",
     "recharts": "2.15.2",
     "sonner": "2.0.3",
@@ -65,25 +74,39 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.1.12",
+    "@types/node": "22.15.17",
+    "@types/react": "18.3.21",
+    "@types/react-dom": "18.3.7",
+    "@types/react-slick": "0.23.13",
+    "@typescript-eslint/eslint-plugin": "8.31.1",
+    "@typescript-eslint/parser": "8.31.1",
     "@vitejs/plugin-react": "4.7.0",
+    "autoprefixer": "10.4.21",
+    "eslint": "9.26.0",
+    "eslint-plugin-react-hooks": "5.2.0",
+    "eslint-plugin-react-refresh": "0.4.19",
+    "gh-pages": "6.3.0",
+    "postcss": "8.5.3",
     "tailwindcss": "4.1.12",
+    "typescript": "5.8.3",
     "vite": "6.3.5"
   },
-  "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
+  "overrides": {
+    "vite": "6.3.5"
   },
-  "peerDependenciesMeta": {
-    "react": {
-      "optional": true
-    },
-    "react-dom": {
-      "optional": true
-    }
+  "packageManager": "pnpm@10.10.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
   },
-  "pnpm": {
-    "overrides": {
-      "vite": "6.3.5"
-    }
-  }
+  "keywords": [
+    "crypto",
+    "forex",
+    "trading",
+    "iranian",
+    "xolabs"
+  ],
+  "author": "XO Labs Team",
+  "license": "MIT",
+  "description": "Complete Persian resource for Iranian traders - Crypto & Forex analysis, professional tools, and comprehensive training"
 }

@@ -43,11 +43,11 @@ const translations = {
     feature4Title: "ویژه ایرانیان",
     feature4Desc: "راهنمای عبور از تحریم و صرافی‌های سازگار",
     
-    // Stats
-    lessons: "درس آموزشی",
-    tools: "ابزار حرفه‌ای",
-    articles: "مقاله تخصصی",
-    users: "کاربر فعال",
+    // Stats - تغییر نام کلیدها برای جلوگیری از تکرار
+    statsLessons: "درس آموزشی",
+    statsTools: "ابزار حرفه‌ای",
+    statsArticles: "مقاله تخصصی",
+    statsUsers: "کاربر فعال",
     
     // Dashboard
     livePrices: "قیمت‌های لحظه‌ای",
@@ -65,7 +65,7 @@ const translations = {
     academyTitle: "آکادمیآموزش حرفه‌ای",
     academySubtitle: "مسیر یادگیری شما از صفر تا صد",
     level: "سطح",
-    lessons: "درس",
+    academyLessons: "درس",  // تغییر نام به academyLessons
     duration: "مدت زمان",
     startCourse: "شروع دوره",
     viewDetails: "مشاهده جزئیات",
@@ -182,11 +182,11 @@ const translations = {
     feature4Title: "For Iranians",
     feature4Desc: "Sanctions bypass guide and compatible exchanges",
     
-    // Stats
-    lessons: "Training Lessons",
-    tools: "Professional Tools",
-    articles: "Specialized Articles",
-    users: "Active Users",
+    // Stats - تغییر نام کلیدها
+    statsLessons: "Training Lessons",
+    statsTools: "Professional Tools",
+    statsArticles: "Specialized Articles",
+    statsUsers: "Active Users",
     
     // Dashboard
     livePrices: "Live Prices",
@@ -204,7 +204,7 @@ const translations = {
     academyTitle: "XO Academy - Professional Training",
     academySubtitle: "Your Learning Path from Zero to Hero",
     level: "Level",
-    lessons: "Lessons",
+    academyLessons: "Lessons",  // تغییر نام به academyLessons
     duration: "Duration",
     startCourse: "Start Course",
     viewDetails: "View Details",

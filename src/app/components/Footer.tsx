@@ -165,7 +165,7 @@ export function Footer() {
                 حمایت از XOLabs
               </h5>
               <p className="text-xs text-gray-400 mb-3">
-                با حمایت مالی خود به ما در توسعه پروژه‌های بیشتر کمک کنید
+               
               </p>
               <a
                 href="https://daramet.com/xolabs"
