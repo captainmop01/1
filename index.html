@@ -4,39 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XOLabs</title>
-    <!-- CSP درست -->
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; script-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; style-src * 'self' 'unsafe-inline' data: blob:;">
-    <!-- آیکون -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 </head>
 <body>
     <div id="root"></div>
-    <!-- این اسکریپت هم لوکال هم گیت رو پشتیبانی میکنه -->
-    <script>
-        // تشخیص محیط
-        const isGitHubPages = window.location.hostname.includes('github.io');
-        const script = document.createElement('script');
-        script.type = 'module';
-        
-        if (isGitHubPages) {
-            // برای گیت‌هاب - از فایل build شده استفاده کن
-            script.src = './dist/assets/index.js';
-            // اگه فایل index.js نیست، دنبال فایل با هش بگرد
-            fetch('./dist/assets/')
-                .then(() => {
-                    // اگه دسترسی نداشت، از مسیر پیشفرض استفاده کن
-                    script.src = './dist/assets/index.js';
-                })
-                .catch(() => {
-                    // اگه نتونست، بذار خود Vite هندل کنه
-                    script.src = './src/main.tsx';
-                });
-        } else {
-            // برای لوکال - از فایل سورس استفاده کن
-            script.src = './src/main.tsx';
-        }
-        
-        document.body.appendChild(script);
-    </script>
+    <script type="module" src="./src/main.tsx"></script>
 </body>
 </html>
