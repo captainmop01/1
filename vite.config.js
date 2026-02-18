@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/1/',  // این خط رو اضافه کن
+  base: process.env.NODE_ENV === 'production' ? '/1/' : '/',
   server: {
     port: 5173,
     open: true
